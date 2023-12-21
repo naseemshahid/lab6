@@ -13,7 +13,30 @@ int min(int a, int b, int c) {
 
 int toGrayScale(int *r, int *g, int *b, Mode mode) {
   //TODO: implement
+
+  
+if (mode==AVERAGE)
+{
+
+  return (*r + *g + *b) / 3;
+
 }
+
+else if( mode==LIGHTNESS ){
+
+return (min(*r,*g,*b) + max(*r,*g,*b)) / 2;
+
+}
+
+else if(mode==LUMINOSITY){
+  
+return ( 0.21 * ( *r )) + (0.72 * (* g)) + (0.07 * (*b));
+
+}
+
+
+}
+
 
 int toSepia(int *r, int *g, int *b) {
   //TODO: implement
